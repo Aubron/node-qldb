@@ -1,20 +1,37 @@
-# NPM Module Boilerplate
+# QLDB for Node
 
-[![Build Status](https://travis-ci.org/flexdinesh/npm-module-boilerplate.svg?branch=master)](https://travis-ci.org/flexdinesh/npm-module-boilerplate) [![dependencies Status](https://david-dm.org/flexdinesh/npm-module-boilerplate/status.svg)](https://david-dm.org/flexdinesh/npm-module-boilerplate) [![devDependencies Status](https://david-dm.org/flexdinesh/npm-module-boilerplate/dev-status.svg)](https://david-dm.org/flexdinesh/npm-module-boilerplate?type=dev) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-**Start developing your NPM module in seconds** ✨
+**An easy-to-use node client for QLDB** ✨
 
-Readymade boilerplate setup with all the best practices to kick start your npm/node module development.
+Amazon QLDB is a fully managed ledger database that provides a transparent, immutable, and cryptographically verifiable transaction log ‎owned by a central trusted authority. Amazon QLDB tracks each and every application data change and maintains a complete and verifiable history of changes over time.
 
-Happy hacking =)
+This database driver library allows for your node applications to take advantage of this SQL-like (PartiQL) serverless datastore, including handling ION hashing, etc.
 
-# Features
 
-* **ES6/ESNext** - Write _ES6_ code and _Babel_ will transpile it to ES5 for backwards compatibility
-* **Test** - _Mocha_ with _Istanbul_ coverage
-* **Lint** - Preconfigured _ESlint_ with _Airbnb_ config
-* **CI** - _TravisCI_ configuration setup
-* **Minify** - Built code will be minified for performance
+# Installation
+
+`yarn add node-qldb`
+`npm install -S node-qldb`
+
+# Usage
+
+{Coming Soon, still experimenting with patterns}
+
+First Idea:
+
+```
+const client = new QLDB({
+  region: 'us-east-2'
+});
+const ledger = await client.getLedger('vehicle-registration')
+const result = await ledger.query('SELECT * FROM vehicles');
+console.log(result);
+```
+
+# TODO
+
+- Session management
 
 # Commands
 - `npm run clean` - Remove `lib/` directory
@@ -28,10 +45,11 @@ Happy hacking =)
 - `npm run build` - Babel will transpile ES6 => ES5 and minify the code.
 - `npm run prepublish` - Hook for npm. Do all the checks before publishing your module.
 
-# Installation
-Just clone this repo and remove `.git` folder.
 
 
 # License
 
+MIT © Aubron Wood
+
+Boilerplated by `npm-module-boilerplate`
 MIT © Dinesh Pandiyan
